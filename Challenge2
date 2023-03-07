@@ -1,0 +1,13 @@
+function isCube(volume, side) {
+  if (volume <= 0 || side <= 0) {
+    return false;
+  }
+
+  const cubeRoot = Math.cbrt(volume);
+  return cubeRoot === side;
+}
+
+// console.log(isCube(27, 3)); // true, cube with side length 3
+// console.log(isCube(8, 2)); // false, cuboid with dimensions 2x2x2
+// console.log(isCube(0, 1)); // false, invalid volume
+// console.log(isCube(1, -1)); // false, invalid side length

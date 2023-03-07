@@ -1,0 +1,11 @@
+function findMissingNumber(str) {
+  let arr = str.split(" ").map(Number); // convert string to array of numbers
+  if (arr.some(isNaN)) return 1; // check for non-numeric elements
+  let min = Math.min(...arr); // find the minimum number in the array
+  let max = Math.max(...arr); // find the maximum number in the array
+  if (max - min + 1 === arr.length) return 0; // check if the array is complete
+  for (let i = min; i <= max; i++) {
+    if (!arr.includes(i)) return i; // find the first missing number in the sequence
+  }
+  return null; // should not happen
+}
